@@ -1,6 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class ExperienceTable1626233229529 implements MigrationInterface {
+export class ExperienceTable1626306046249 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
@@ -21,7 +21,7 @@ export class ExperienceTable1626233229529 implements MigrationInterface {
                     },
                     {
                         name: 'buy_id',
-                        type: 'varchar'
+                        type: 'uuid'
                     }
                 ],
 
