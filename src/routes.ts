@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { CreateClientController } from "./app/useCases/CreateClient/CreateClientController";
 
 const router = Router();
 
-router.post('/users', (request, response) => {
-    return response.status(202).send();
-})
+const createClientController = new CreateClientController();
+
+router.post('/client', createClientController.handle)
 
 export { router }
