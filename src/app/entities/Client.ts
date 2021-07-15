@@ -1,16 +1,30 @@
-// import { Entity, PrimaryGeneratedColumn } from "typeorm"
-// import { v4 as uuid } from 'uuid';
+import { Column, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { v4 as uuid } from "uuid";
 
-// @Entity("client")
-// class Client {
+@Entity("client")
+class Client {
 
-//     @PrimaryGeneratedColumn()
-//     readonly id: string;
-//     name
-//     cpf
-//     tel
-//     email
+    @PrimaryColumn()
+    readonly id: string;
 
-// }
+    @Column()
+    name: string;
 
-// export { User }
+    @Column()
+    cpf: string;
+
+    @Column()
+    @UpdateDateColumn()
+    tel: string;
+
+    @Column()
+    @UpdateDateColumn()
+    email: string;
+
+    constructor() {
+        if (!this.id)
+            this.id = uuid();
+    }
+}
+
+export { Client }
